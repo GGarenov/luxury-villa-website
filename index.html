@@ -44,7 +44,7 @@
               <li><a class="nav__link" href="#hero">Home</a></li>
               <li><a class="nav__link" href="#the-villa">The Villa</a></li>
               <li><a class="nav__link" href="#amenities">Amenities</a></li>
-              <li><a class="nav__link" href="#gallery">Gallery</a></li>
+              <li><a class="nav__link" href="gallery.html">Gallery</a></li>
               <li><a class="nav__link" href="#location">Location</a></li>
               <li><a class="nav__link" href="#contact">Contact</a></li>
             </ul>
@@ -435,14 +435,164 @@
         </div>
       </section>
 
-      <section id="amenities" class="section" tabindex="-1">
-        <h2>Amenities</h2>
-        <p>Pool, kitchen, and more — content coming soon.</p>
+      <section
+        id="amenities"
+        class="section section--amenities"
+        tabindex="-1"
+        aria-labelledby="amenities-heading"
+      >
+        <div class="amenities__inner">
+          <header class="amenities__intro">
+            <p class="section__eyebrow">Amenities</p>
+            <h2 id="amenities-heading" class="section__title">
+              Curated comfort, inside and out
+            </h2>
+            <p class="amenities__lead">
+              Thoughtfully equipped for slow mornings, long lunches, and quiet
+              evenings—whether you stay in or drift between the pool and the
+              living room.
+            </p>
+          </header>
+
+          <article class="amenities__group">
+            <div class="amenities__content">
+              <div class="amenities__meta">
+                <span class="amenities__index" aria-hidden="true">01</span>
+                <h3 class="amenities__name">Indoor</h3>
+              </div>
+              <p class="amenities__blurb">
+                Generous living spaces flow together—kitchen, dining, and lounge
+                feel like one calm, light-filled room.
+              </p>
+              <ul class="amenities__list">
+                <li>Fully equipped kitchen &amp; dining for home cooking</li>
+                <li>Three bedrooms, each with its own bathroom</li>
+                <li>Multiple living &amp; lounge areas</li>
+                <li>Climate control (heating &amp; cooling)</li>
+                <li>Laundry facilities</li>
+              </ul>
+            </div>
+            <div class="amenities__visual">
+              <button
+                type="button"
+                class="amenities__photo-trigger"
+                aria-label="Open full size: kitchen and living space"
+              >
+                <img
+                  src="./assets/images/kitchen_living_room/mix3.jpg"
+                  alt="Kitchen and open-plan living area with natural light"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </article>
+
+          <article class="amenities__group amenities__group--reverse">
+            <div class="amenities__content">
+              <div class="amenities__meta">
+                <span class="amenities__index" aria-hidden="true">02</span>
+                <h3 class="amenities__name">Outdoor &amp; pool</h3>
+              </div>
+              <p class="amenities__blurb">
+                The garden and pool are an extension of the house—designed for
+                shade, sun, and long afternoons by the water.
+              </p>
+              <ul class="amenities__list">
+                <li>Private swimming pool &amp; sun terrace</li>
+                <li>Landscaped grounds &amp; garden</li>
+                <li>Outdoor dining &amp; lounge areas</li>
+                <li>Sun loungers &amp; poolside shower</li>
+                <li>Private parking on site</li>
+              </ul>
+            </div>
+            <div class="amenities__visual">
+              <button
+                type="button"
+                class="amenities__photo-trigger"
+                aria-label="Open full size: swimming pool and terrace"
+              >
+                <img
+                  src="./assets/images/swimming_pool/swimming_pool_2.jpg"
+                  alt="Swimming pool with sun terrace and loungers"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </article>
+
+          <article class="amenities__group">
+            <div class="amenities__content">
+              <div class="amenities__meta">
+                <span class="amenities__index" aria-hidden="true">03</span>
+                <h3 class="amenities__name">Comfort &amp; tech</h3>
+              </div>
+              <p class="amenities__blurb">
+                The essentials for a relaxed stay—connected when you want to be,
+                peaceful when you don’t.
+              </p>
+              <ul class="amenities__list">
+                <li>High-speed Wi‑Fi throughout</li>
+                <li>Smart TV &amp; entertainment in living areas</li>
+                <li>Quality linens, towels &amp; bath amenities</li>
+                <li>Premium fixtures in kitchens &amp; bathrooms</li>
+                <li>Outdoor lighting for evenings on the terrace</li>
+              </ul>
+            </div>
+            <div class="amenities__visual amenities__visual--duo">
+              <button
+                type="button"
+                class="amenities__photo-trigger amenities__photo-trigger--tall"
+                aria-label="Open full size: living room"
+              >
+                <img
+                  src="./assets/images/living_room/living_room2.jpg"
+                  alt="Comfortable living room with seating"
+                  width="560"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button
+                type="button"
+                class="amenities__photo-trigger amenities__photo-trigger--short"
+                aria-label="Open full size: bathroom detail"
+              >
+                <img
+                  src="./assets/images/bathroom1/bathroom2.jpg"
+                  alt="Bathroom with modern fixtures"
+                  width="560"
+                  height="420"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="gallery" class="section" tabindex="-1">
-        <h2>Gallery</h2>
-        <p>Photos coming soon.</p>
+      <section
+        id="gallery"
+        class="section section--gallery-teaser"
+        tabindex="-1"
+        aria-labelledby="gallery-heading"
+      >
+        <div class="gallery-teaser">
+          <p class="section__eyebrow">Gallery</p>
+          <h2 id="gallery-heading" class="section__title">Photo tour</h2>
+          <p class="gallery-teaser__text">
+            Browse the villa room by room—exterior, living spaces, bedrooms,
+            bathrooms, and the pool—in a full-screen photo experience.
+          </p>
+          <a class="gallery-teaser__cta" href="gallery.html">View full photo tour</a>
+        </div>
       </section>
 
       <section id="location" class="section" tabindex="-1">
@@ -462,7 +612,7 @@
 
     <div
       id="villa-lightbox"
-      class="lightbox"
+      class="lightbox lightbox--simple"
       role="dialog"
       aria-modal="true"
       aria-label="Enlarged photo"
