@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,13 +18,15 @@
       <nav class="nav" id="nav" aria-label="Main navigation">
         <div class="nav__inner">
           <a href="index.html" class="nav__brand">
-            <img
-              src="./assets/images/logo2.png"
-              alt="Luxury Villa"
-              class="nav__logo"
-              width="160"
-              height="48"
-            />
+            <span class="nav__logo-wrap">
+              <img
+                src="./assets/images/logo.png"
+                alt="Luxury Villa"
+                class="nav__logo"
+                width="208"
+                height="62"
+              />
+            </span>
           </a>
 
           <button
@@ -42,17 +45,33 @@
           <div class="nav__panel" id="nav-menu">
             <ul class="nav__links">
               <li><a class="nav__link" href="index.html#hero">Home</a></li>
-              <li><a class="nav__link" href="index.html#the-villa">The Villa</a></li>
-              <li><a class="nav__link" href="index.html#amenities">Amenities</a></li>
-              <li><a class="nav__link" href="gallery.html" aria-current="page">Gallery</a></li>
+              <li>
+                <a class="nav__link" href="index.html#the-villa">The Villa</a>
+              </li>
+              <li>
+                <a class="nav__link" href="index.html#amenities">Amenities</a>
+              </li>
+              <li>
+                <a class="nav__link" href="gallery.html" aria-current="page"
+                  >Gallery</a
+                >
+              </li>
               <li><a class="nav__link" href="rates.html">Price</a></li>
-              <li><a class="nav__link" href="index.html#location">Location</a></li>
-              <li><a class="nav__link" href="index.html#contact">Contact</a></li>
+              <li>
+                <a class="nav__link" href="index.html#location">Location</a>
+              </li>
+              <li>
+                <a class="nav__link" href="index.html#contact">Contact</a>
+              </li>
             </ul>
-            <a class="nav__cta nav__cta--in-panel" href="index.html#contact">Book now</a>
+            <a class="nav__cta nav__cta--in-panel" href="index.html#contact"
+              >Book now</a
+            >
           </div>
 
-          <a class="nav__cta nav__cta--bar" href="index.html#contact">Book now</a>
+          <a class="nav__cta nav__cta--bar" href="index.html#contact"
+            >Book now</a
+          >
         </div>
       </nav>
     </header>
@@ -94,17 +113,43 @@
       aria-label="Photo viewer"
       hidden
     >
-      <div class="lightboxOverlay" data-gallery-lightbox-close tabindex="-1"></div>
+      <div
+        class="lightboxOverlay"
+        data-gallery-lightbox-close
+        tabindex="-1"
+      ></div>
       <div class="lightboxContent">
-        <button type="button" class="lightboxClose" id="lightboxClose" aria-label="Close">
+        <button
+          type="button"
+          class="lightboxClose"
+          id="lightboxClose"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
-        <img src="" alt="" class="lightboxImg" id="lightboxImg" width="1600" height="1200" />
+        <img
+          src=""
+          alt=""
+          class="lightboxImg"
+          id="lightboxImg"
+          width="1600"
+          height="1200"
+        />
         <div class="lightboxNav">
-          <button type="button" class="lightboxArrow lightboxPrev" id="lightboxPrev" aria-label="Previous photo">
+          <button
+            type="button"
+            class="lightboxArrow lightboxPrev"
+            id="lightboxPrev"
+            aria-label="Previous photo"
+          >
             &#8249;
           </button>
-          <button type="button" class="lightboxArrow lightboxNext" id="lightboxNext" aria-label="Next photo">
+          <button
+            type="button"
+            class="lightboxArrow lightboxNext"
+            id="lightboxNext"
+            aria-label="Next photo"
+          >
             &#8250;
           </button>
         </div>

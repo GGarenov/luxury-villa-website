@@ -290,7 +290,7 @@ const galleryRooms = [
   },
   {
     id: "living-original",
-    label: "Living (original)",
+    label: "Main Living Room",
     summary: "Original living character · Bright interiors",
     images: [
       "living_room_original1.jpg",

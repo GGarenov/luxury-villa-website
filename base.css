@@ -1,0 +1,175 @@
+/* ─── Luxury sea · light theme (tokens) ───────────────────── */
+
+:root {
+  /* Surfaces */
+  --color-bg: #f2f8fa;
+  --color-bg-soft: #e6f1f4;
+  --color-bg-deep: #d8e8ee;
+  --color-surface: #ffffff;
+
+  /* Type */
+  --color-text: #0f3542;
+  --color-text-muted: #5a7580;
+
+  /* Brand accent — ocean teal */
+  --color-accent: #1a7f94;
+  --color-accent-hover: #136a7d;
+  --color-accent-soft: #6a9dad;
+  --color-accent-light: #2a9eb8;
+
+  --color-accent-rgb: 26, 127, 148;
+  --color-accent-hover-rgb: 19, 106, 125;
+  /* Deep accent for gradients / focus */
+  --color-accent-deep-rgb: 12, 72, 86;
+
+  /* Cool ink for scrims & shadows */
+  --color-ink-rgb: 12, 48, 58;
+  --color-ink-deep-rgb: 6, 28, 36;
+
+  /* Hero & photography copy */
+  --color-hero-fg: #f0f8fa;
+  --color-hero-fg-soft: rgba(240, 248, 250, 0.92);
+
+  /* Text / buttons on dark photo overlays */
+  --color-on-dark: #ffffff;
+  --color-pearl: #f2fafb;
+  --color-pearl-soft: rgba(242, 250, 251, 0.78);
+
+  /* Pricing & gift cards (cool sand, not bronze) */
+  --color-card-heading: #0f3542;
+  --color-card-ink-rgb: 15, 53, 66;
+  --color-card-highlight-rgb: 26, 127, 148;
+
+  /* Section accents */
+  --color-wedge: #d0e4ea;
+  --color-wedge-warm: #c8dce4;
+
+  /* UI */
+  --color-border-subtle: rgba(var(--color-accent-rgb), 0.12);
+  --color-danger: #9b3333;
+  --color-danger-muted: #7a2e2e;
+
+  /* “Light pill” CTA on dark backgrounds */
+  --color-inverse-btn-bg: #e3f4f8;
+  --color-inverse-btn-bg-hover: #cfeaf0;
+  --color-inverse-btn-text: #0a2e38;
+  --color-inverse-btn-border: rgba(255, 255, 255, 0.4);
+
+  /* Primary buttons — shared geometry */
+  --btn-radius: 8px;
+  --btn-pad-y: 0.75rem;
+  --btn-pad-x: 1.5rem;
+  --btn-min-height: 2.85rem;
+  --btn-font-size: 0.9375rem;
+  --btn-font-weight: 600;
+  --btn-letter-spacing: 0.02em;
+
+  /* Nav bar CTA — slightly tighter */
+  --btn-nav-pad-y: 0.65rem;
+  --btn-nav-pad-x: 1.25rem;
+  --btn-nav-min-height: 2.5rem;
+}
+
+/* ─── Unified primary buttons ─────────────────────────────── */
+
+.nav__cta,
+.hero__cta--primary,
+.gallery-teaser__cta,
+.contact__submit,
+.seasons__book-btn,
+.gift__buy-btn,
+.rates-cta__btn {
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: var(--btn-letter-spacing);
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav__cta,
+.hero__cta--primary,
+.gallery-teaser__cta,
+.contact__submit,
+.seasons__book-btn,
+.gift__buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--btn-min-height);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  color: var(--color-on-dark);
+  background: var(--color-accent);
+}
+
+.rates-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--btn-min-height);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+}
+
+.rates-cta__btn:not(.rates-cta__btn--on-dark) {
+  color: var(--color-on-dark);
+  background: var(--color-accent);
+}
+
+.nav__cta:hover,
+.hero__cta--primary:hover,
+.gallery-teaser__cta:hover,
+.contact__submit:hover,
+.seasons__book-btn:hover,
+.gift__buy-btn:hover,
+.rates-cta__btn:not(.rates-cta__btn--on-dark):hover {
+  background: var(--color-accent-hover);
+  color: var(--color-on-dark);
+}
+
+.nav__cta:focus-visible,
+.hero__cta--primary:focus-visible,
+.gallery-teaser__cta:focus-visible,
+.contact__submit:focus-visible,
+.seasons__book-btn:focus-visible,
+.gift__buy-btn:focus-visible,
+.rates-cta__btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.nav__cta {
+  min-height: var(--btn-nav-min-height);
+  padding: var(--btn-nav-pad-y) var(--btn-nav-pad-x);
+}
+
+.hero__cta--primary:focus-visible {
+  outline-color: var(--color-on-dark);
+}
+
+.rates-cta__btn--on-dark {
+  background: var(--color-inverse-btn-bg);
+  color: var(--color-inverse-btn-text);
+  border-color: var(--color-inverse-btn-border);
+}
+
+.rates-cta__btn--on-dark:hover {
+  background: var(--color-inverse-btn-bg-hover);
+  color: var(--color-inverse-btn-text);
+}
+
+.rates-cta__btn--on-dark:focus-visible {
+  outline-color: var(--color-pearl);
+}
+
+.contact__submit {
+  font: inherit;
+}

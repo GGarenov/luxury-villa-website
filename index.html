@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,13 +18,15 @@
       <nav class="nav" id="nav" aria-label="Main navigation">
         <div class="nav__inner">
           <a href="#hero" class="nav__brand">
-            <img
-              src="./assets/images/logo.png"
-              alt="Luxury Villa"
-              class="nav__logo"
-              width="160"
-              height="48"
-            />
+            <span class="nav__logo-wrap">
+              <img
+                src="./assets/images/logo.png"
+                alt="Luxury Villa"
+                class="nav__logo"
+                width="208"
+                height="62"
+              />
+            </span>
           </a>
 
           <button
@@ -296,7 +299,7 @@
                       Bedroom 1
                     </span>
                   </dt>
-                  <dd>22&nbsp;m²</dd>
+                  <dd>41&nbsp;m²</dd>
                 </div>
                 <div class="villa-facts__row">
                   <dt>
@@ -313,7 +316,7 @@
                       Bedroom 2
                     </span>
                   </dt>
-                  <dd>20&nbsp;m²</dd>
+                  <dd>37&nbsp;m²</dd>
                 </div>
                 <div class="villa-facts__row">
                   <dt>
@@ -330,7 +333,7 @@
                       Bathroom 1
                     </span>
                   </dt>
-                  <dd>8&nbsp;m²</dd>
+                  <dd>15&nbsp;m²</dd>
                 </div>
                 <div class="villa-facts__row">
                   <dt>
@@ -347,11 +350,11 @@
                       Bathroom 2
                     </span>
                   </dt>
-                  <dd>5&nbsp;m²</dd>
+                  <dd>9&nbsp;m²</dd>
                 </div>
                 <div class="villa-facts__row">
                   <dt>Open-plan kitchen &amp; living</dt>
-                  <dd>65&nbsp;m²</dd>
+                  <dd>122&nbsp;m²</dd>
                 </div>
               </dl>
             </div>
@@ -374,7 +377,7 @@
                       Bedroom 3
                     </span>
                   </dt>
-                  <dd>24&nbsp;m²</dd>
+                  <dd>45&nbsp;m²</dd>
                 </div>
                 <div class="villa-facts__row">
                   <dt>
@@ -391,7 +394,7 @@
                       Bathroom 3
                     </span>
                   </dt>
-                  <dd>6&nbsp;m²</dd>
+                  <dd>11&nbsp;m²</dd>
                 </div>
               </dl>
             </div>
@@ -772,9 +775,7 @@
         <div class="contact__inner">
           <header class="contact__intro">
             <p class="section__eyebrow">Contact</p>
-            <h2 id="contact-heading" class="section__title">
-              Enquire about your stay
-            </h2>
+            <h2 id="contact-heading" class="section__title">Book your stay</h2>
             <p class="contact__lead">
               Tell us your dates, who is travelling, and anything you need to
               know—we will come back to you with availability and next steps.
@@ -926,9 +927,7 @@
                   hidden
                 ></p>
 
-                <button type="submit" class="contact__submit">
-                  Make you reservation
-                </button>
+                <button type="submit" class="contact__submit">Book now</button>
               </form>
             </div>
 
@@ -950,7 +949,7 @@
                   <a
                     class="contact__direct-value"
                     href="mailto:enquiries@example.com"
-                    >enquiries@example.com</a
+                    >support@villathalassa.com</a
                   >
                 </li>
                 <li class="contact__direct-item">
