@@ -583,3 +583,84 @@ const galleryRooms = [
     true
   );
 })();
+
+(() => {
+  const form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+
+  const errorEl = document.getElementById("contact-error");
+  const successEl = document.getElementById("contact-success");
+
+  const hideFeedback = () => {
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = "";
+    }
+    if (successEl) {
+      successEl.hidden = true;
+      successEl.textContent = "";
+    }
+  };
+
+  form.addEventListener("input", () => hideFeedback(), true);
+
+  form.addEventListener("submit", (e) => {
+    const rawAction = form.getAttribute("action");
+    const hasRemoteAction =
+      typeof rawAction === "string" && /^https?:\/\//i.test(rawAction.trim());
+
+    if (hasRemoteAction) {
+      hideFeedback();
+      return;
+    }
+
+    e.preventDefault();
+    hideFeedback();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const to = form.getAttribute("data-contact-email")?.trim();
+    if (!to) {
+      if (errorEl) {
+        errorEl.textContent =
+          "Add a data-contact-email attribute on the form with your address.";
+        errorEl.hidden = false;
+      }
+      return;
+    }
+
+    const fd = new FormData(form);
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const phone = String(fd.get("phone") ?? "").trim();
+    const guests = String(fd.get("guests") ?? "").trim();
+    const checkIn = String(fd.get("check-in") ?? "").trim();
+    const checkOut = String(fd.get("check-out") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "—"}`,
+      `Guests: ${guests || "—"}`,
+      `Check-in: ${checkIn || "—"}`,
+      `Check-out: ${checkOut || "—"}`,
+      "",
+      message,
+    ].join("\n");
+
+    const subject = "Villa enquiry (website)";
+    const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
+    if (successEl) {
+      successEl.textContent = `If your email app did not open, write to us at ${to}.`;
+      successEl.hidden = false;
+      successEl.focus();
+    }
+  });
+})();
