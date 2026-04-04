@@ -2149,6 +2149,963 @@ body.nav-open {
   }
 }
 
+/* ─── Rates hero ──────────────────────────────────────────── */
+
+.rates-hero {
+  position: relative;
+  padding: 5.5rem 1.5rem 4rem;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.rates-hero__media {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.rates-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) brightness(0.55);
+  transform: scale(1.04);
+}
+
+.rates-hero__scrim {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(
+    165deg,
+    rgba(44, 74, 62, 0.82) 0%,
+    rgba(31, 54, 44, 0.78) 45%,
+    rgba(22, 40, 32, 0.88) 100%
+  );
+}
+
+.rates-hero .section__eyebrow {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.rates-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.rates-hero__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+
+.rates-hero__sub {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ─── Prices panel (photo + cards) ───────────────────────── */
+
+.section--prices-panel {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 4rem 1.5rem 4.5rem;
+  overflow: hidden;
+}
+
+.rates-prices__media {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.rates-prices__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(45%) blur(3px) brightness(0.92);
+  transform: scale(1.08);
+}
+
+.rates-prices__overlay {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(
+    175deg,
+    rgba(72, 56, 44, 0.88) 0%,
+    rgba(92, 74, 58, 0.82) 42%,
+    rgba(58, 46, 38, 0.9) 100%
+  );
+}
+
+.seasons__inner--on-photo {
+  position: relative;
+  z-index: 2;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.seasons__header--center {
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section__title--on-photo {
+  color: #fdf8f3;
+}
+
+.seasons__note--on-photo {
+  margin: 0.75rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(253, 248, 243, 0.78);
+}
+
+.seasons__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.seasons__grid--three {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .seasons__grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.seasons__action {
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+.seasons__book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 2.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #3a2e26;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f0dcc4 0%, #e8c9a8 45%, #ddb892 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seasons__book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.seasons__book-btn:focus-visible {
+  outline: 2px solid #fdf8f3;
+  outline-offset: 4px;
+}
+
+.rate-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 168, 130, 0.35);
+  background: linear-gradient(
+    165deg,
+    #fffaf4 0%,
+    #f5ebe0 48%,
+    #efe2d4 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 14px 40px rgba(58, 46, 38, 0.12);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 20px 50px rgba(58, 46, 38, 0.18);
+}
+
+.rate-card--peak {
+  border-color: rgba(184, 140, 90, 0.55);
+  background: linear-gradient(
+    165deg,
+    #fff6eb 0%,
+    #f2dcc6 40%,
+    #e8cdb0 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(184, 140, 90, 0.25),
+    0 16px 44px rgba(122, 91, 46, 0.18);
+}
+
+.rate-card--shoulder {
+  border-color: rgba(188, 160, 130, 0.4);
+  background: linear-gradient(
+    165deg,
+    #fdf9f4 0%,
+    #f0e6da 50%,
+    #e8ddd0 100%
+  );
+}
+
+.rate-card--holiday {
+  border-color: rgba(160, 120, 88, 0.45);
+  background: linear-gradient(
+    165deg,
+    #faf5ef 0%,
+    #ebe0d4 55%,
+    #e2d4c4 100%
+  );
+}
+
+.rate-card__ribbon {
+  position: absolute;
+  top: 0.85rem;
+  right: -2rem;
+  padding: 0.28rem 2.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3a2e26;
+  background: linear-gradient(135deg, #e8c9a8 0%, #d4a574 100%);
+  transform: rotate(35deg);
+  transform-origin: center;
+  z-index: 1;
+}
+
+.rate-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #8b5c3a 0%, #c49a6c 100%);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.rate-card__head {
+  padding: 1.85rem 1.35rem 1.15rem;
+}
+
+.rate-card--peak .rate-card__head {
+  padding-top: 2.4rem;
+}
+
+.rate-card--holiday .rate-card__head {
+  padding-top: 2.4rem;
+}
+
+.rate-card__season {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #3a2e26;
+  line-height: 1.2;
+}
+
+.rate-card__months {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(58, 46, 38, 0.65);
+}
+
+.rate-card__body {
+  flex: 1;
+  padding: 0 1.35rem;
+}
+
+.rate-card__prices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(122, 91, 46, 0.15);
+}
+
+.rate-card__price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rate-card__day-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(58, 46, 38, 0.62);
+}
+
+.rate-card__amount {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #3a2e26;
+}
+
+.rate-card__per {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(58, 46, 38, 0.55);
+}
+
+.rate-card__price-row--weekend .rate-card__amount {
+  font-size: 1.2rem;
+}
+
+.rate-card__amount--note {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.rate-card__details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+}
+
+.rate-card__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rate-card__detail dt {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(58, 46, 38, 0.5);
+}
+
+.rate-card__detail dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3a2e26;
+}
+
+.rate-card__promo {
+  margin: 1rem 0 0;
+  padding: 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: linear-gradient(135deg, rgba(122, 91, 46, 0.08) 0%, rgba(194, 154, 82, 0.1) 100%);
+  border-radius: 8px;
+}
+
+.rate-card__promo strong {
+  color: #7a4f2e;
+}
+
+.rate-card__promo--soft {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(184, 140, 90, 0.2);
+}
+
+/* ─── Included strip ──────────────────────────────────────── */
+
+.rates-strip-figure {
+  margin: 0 auto 2.25rem;
+  max-width: 72rem;
+  padding: 0 1.5rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(58, 46, 38, 0.1);
+}
+
+.rates-strip-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+.rates-strip-figure--narrow {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+.rates-strip-figure--narrow img {
+  aspect-ratio: 24 / 9;
+}
+
+.section--included {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.section--included::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--color-surface);
+}
+
+.included__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.included__inner .section__title {
+  margin-bottom: 2rem;
+}
+
+.included__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.included__grid--six {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 720px) {
+  .included__grid--six {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.included__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(184, 140, 90, 0.18);
+  background: linear-gradient(165deg, rgba(255, 250, 244, 0.9) 0%, rgba(245, 235, 224, 0.65) 100%);
+}
+
+.included__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(184, 140, 90, 0.12);
+  color: #5c4a38;
+  margin-bottom: 0.25rem;
+}
+
+.included__item strong {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.included__desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ─── Gift section ────────────────────────────────────────── */
+
+.section--gift {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 4.5rem 1.5rem 4rem;
+}
+
+.section--gift::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    #f5f3ef 0%,
+    #ede8e0 50%,
+    #f5f3ef 100%
+  );
+}
+
+.gift__split {
+  display: grid;
+  gap: 2rem 2.5rem;
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto 2.75rem;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .gift__split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+}
+
+.gift__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(58, 46, 38, 0.12);
+}
+
+.gift__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.gift__content .section__eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.gift__content .section__title {
+  margin-bottom: 1rem;
+}
+
+.gift__lead {
+  margin: 0 0 0.85rem;
+  font-size: 1.06rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.gift__sub {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.gift__inner--cards {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gift__options {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.gift__options--three {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .gift__options--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gift__action {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gift__buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 2.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #8b5c3a 0%, #6b4423 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 32px rgba(107, 68, 35, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gift__buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(107, 68, 35, 0.3);
+}
+
+.gift__buy-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.gift-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1.25rem 1.75rem;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 140, 90, 0.22);
+  background: linear-gradient(
+    155deg,
+    rgba(255, 250, 244, 0.98) 0%,
+    rgba(245, 235, 224, 0.75) 100%
+  );
+  box-shadow: 0 10px 32px rgba(58, 46, 38, 0.07);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(28, 28, 28, 0.1);
+}
+
+.gift-card__shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: none;
+}
+
+.gift-card:hover .gift-card__shimmer {
+  animation: gift-shimmer 0.75s ease forwards;
+}
+
+@keyframes gift-shimmer {
+  0% {
+    left: -60%;
+    opacity: 1;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+.gift-card--featured {
+  border-color: rgba(184, 140, 90, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(184, 140, 90, 0.25),
+    0 14px 42px rgba(122, 91, 46, 0.12);
+  background: linear-gradient(
+    165deg,
+    #fffaf4 0%,
+    #f5ebe0 100%
+  );
+}
+
+.gift-card--custom {
+  border-style: dashed;
+  border-color: rgba(184, 140, 90, 0.35);
+  background: rgba(255, 250, 244, 0.5);
+}
+
+.gift-card__tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b4423;
+}
+
+.gift-card__value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.gift-card--custom .gift-card__value {
+  font-size: 1.5rem;
+}
+
+.gift-card__save {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #7a5b2e 0%, #c29a52 100%);
+  border-radius: 4px;
+}
+
+.gift-card__desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Policies ────────────────────────────────────────────── */
+
+.section--rates-policies {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.section--rates-policies::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--color-surface);
+}
+
+.policies__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.policies__inner .section__title {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.policies__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.policies__grid--three {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .policies__grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.policy-card {
+  padding: 1.35rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(184, 140, 90, 0.18);
+  background: linear-gradient(165deg, rgba(255, 250, 244, 0.95) 0%, rgba(245, 235, 224, 0.5) 100%);
+}
+
+.policy-card__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.policy-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ─── Rates CTA ───────────────────────────────────────────── */
+
+.section--rates-cta {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 4.5rem 1.5rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.rates-cta__media {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.rates-cta__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(25%) brightness(0.5);
+  transform: scale(1.03);
+}
+
+.rates-cta__scrim {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(44, 74, 62, 0.75) 0%,
+    rgba(31, 54, 44, 0.82) 100%
+  );
+}
+
+.rates-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.rates-cta__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.rates-cta__title--light {
+  color: #fdf8f3;
+}
+
+.rates-cta__text {
+  margin: 0 0 1.5rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.rates-cta__text--light {
+  color: rgba(253, 248, 243, 0.78);
+}
+
+.rates-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.85rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-decoration: none;
+  background: var(--color-accent);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.rates-cta__btn--on-dark {
+  background: linear-gradient(135deg, #f0dcc4 0%, #ddb892 100%);
+  color: #3a2e26;
+}
+
+.rates-cta__btn--on-dark:hover {
+  background: linear-gradient(135deg, #f5e4d2 0%, #e8c9a8 100%);
+}
+
+.rates-cta__btn:focus-visible {
+  outline: 2px solid #fdf8f3;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rate-card,
+  .gift-card,
+  .rates-hero__media img,
+  .rates-prices__media img,
+  .rates-cta__media img {
+    transition: none;
+  }
+
+  .gift-card:hover .gift-card__shimmer {
+    animation: none;
+  }
+
+  .seasons__book-btn:hover,
+  .gift__buy-btn:hover {
+    transform: none;
+  }
+}
+
 footer {
   padding: 2rem 1.25rem;
   text-align: center;
