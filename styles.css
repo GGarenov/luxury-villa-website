@@ -105,11 +105,6 @@ body.nav-open {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.nav__toggle:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
 .nav__toggle-bar {
   display: block;
   height: 2px;
@@ -183,7 +178,9 @@ body.nav-open {
   background: rgba(var(--color-accent-rgb), 0.08);
 }
 
-.nav__link:focus-visible {
+.nav__toggle:focus-visible,
+.nav__link:focus-visible,
+.lightbox--simple .lightbox__close:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
@@ -652,11 +649,6 @@ body.nav-open {
   opacity: 0.92;
 }
 
-.villa__photo-trigger:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
 .lightbox.lightbox--simple {
   position: fixed;
   inset: 0;
@@ -723,11 +715,6 @@ body.nav-open {
 .lightbox--simple .lightbox__close:hover {
   background: #fff;
   transform: scale(1.05);
-}
-
-.lightbox--simple .lightbox__close:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
 }
 
 .lightbox--simple .lightbox__close-icon {
@@ -1883,13 +1870,14 @@ body.nav-open {
   transition: opacity 0.2s ease;
 }
 
-.photo-tour__cell:hover {
-  opacity: 0.96;
-}
-
+.villa__photo-trigger:focus-visible,
 .photo-tour__cell:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+.photo-tour__cell:hover {
+  opacity: 0.96;
 }
 
 .photo-tour__cell img {
@@ -1994,11 +1982,6 @@ body.nav-open {
   background: rgba(255, 255, 255, 0.25);
 }
 
-.lightboxClose:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
 .lightboxNav {
   position: absolute;
   width: calc(100% + 120px);
@@ -2035,6 +2018,7 @@ body.nav-open {
   transform: scale(1.08);
 }
 
+.lightboxClose:focus-visible,
 .lightboxArrow:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
@@ -2108,10 +2092,6 @@ body.nav-open {
     var(--color-bg) 55%,
     var(--color-bg) 100%
   );
-}
-
-.rates-hero .section__eyebrow {
-  color: var(--color-accent);
 }
 
 .rates-hero__inner {
