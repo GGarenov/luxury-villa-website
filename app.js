@@ -63,7 +63,7 @@
 
   if (!slides.length || !prevBtn || !nextBtn || !dotsContainer) return;
 
-  const autoplayMs = 6500;
+  const autoplayMs = 10000;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let index = 0;
   let timerId = null;
@@ -175,7 +175,7 @@
   const closeBtn = root.querySelector(".lightbox__close");
   const closeTargets = root.querySelectorAll("[data-lightbox-close]");
   const triggers = document.querySelectorAll(
-    ".villa__photo-trigger, .amenities__photo-trigger"
+    ".villa__photo-trigger, .amenities__photo-trigger",
   );
 
   if (!img || !closeBtn || !triggers.length) return;
@@ -258,16 +258,22 @@ const galleryRooms = [
     label: "Kitchen & living",
     summary: "Open-plan kitchen · Dining · Natural light",
     layout: "split",
-    images: ["mix1.jpg", "mix2.jpg", "mix3.jpg", "mix4.jpg", "mix5.jpg", "mix6.jpg", "mix7.jpg"].map(
-      (f) => P("kitchen_living_room", f)
-    ),
+    images: [
+      "mix1.jpg",
+      "mix2.jpg",
+      "mix3.jpg",
+      "mix4.jpg",
+      "mix5.jpg",
+      "mix6.jpg",
+      "mix7.jpg",
+    ].map((f) => P("kitchen_living_room", f)),
   },
   {
     id: "living",
     label: "Living room",
     summary: "Comfortable seating · Views · Relaxed atmosphere",
-    images: ["living_room1.jpg", "living_room2.jpg", "living_room3.jpg"].map((f) =>
-      P("living_room", f)
+    images: ["living_room1.jpg", "living_room2.jpg", "living_room3.jpg"].map(
+      (f) => P("living_room", f),
     ),
   },
   {
@@ -306,35 +312,45 @@ const galleryRooms = [
     id: "bedroom-1",
     label: "Bedroom 1",
     summary: "En-suite · Quality bedding · Storage",
-    images: ["bedroom_1.jpg", "bedroom_2.jpg", "bedroom_3.jpg"].map((f) => P("bedroom1", f)),
+    images: ["bedroom_1.jpg", "bedroom_2.jpg", "bedroom_3.jpg"].map((f) =>
+      P("bedroom1", f),
+    ),
   },
   {
     id: "bedroom-2",
     label: "Bedroom 2",
     summary: "En-suite · Calm tones · Natural light",
-    images: ["second_bedroom_1.jpg", "second_bedroom_2.jpg", "second_bedroom_3.jpg"].map((f) =>
-      P("bedroom2", f)
-    ),
+    images: [
+      "second_bedroom_1.jpg",
+      "second_bedroom_2.jpg",
+      "second_bedroom_3.jpg",
+    ].map((f) => P("bedroom2", f)),
   },
   {
     id: "bedroom-3",
     label: "Bedroom 3",
     summary: "En-suite · Restful space",
-    images: ["third_bedroom_1.jpg", "third_bedroom_2.jpg", "third_bedroom_3.jpg"].map((f) =>
-      P("bedroom3", f)
-    ),
+    images: [
+      "third_bedroom_1.jpg",
+      "third_bedroom_2.jpg",
+      "third_bedroom_3.jpg",
+    ].map((f) => P("bedroom3", f)),
   },
   {
     id: "bathroom-1",
     label: "Bathroom 1",
     summary: "Modern fixtures · Walk-in shower",
-    images: ["bathroom1.jpg", "bathroom2.jpg", "bathroom3.jpg"].map((f) => P("bathroom1", f)),
+    images: ["bathroom1.jpg", "bathroom2.jpg", "bathroom3.jpg"].map((f) =>
+      P("bathroom1", f),
+    ),
   },
   {
     id: "bathroom-2",
     label: "Bathroom 2",
     summary: "Premium finishes · Thoughtful layout",
-    images: ["second_bathroom_1.jpg", "second_bathroom_2.jpg"].map((f) => P("bathroom2", f)),
+    images: ["second_bathroom_1.jpg", "second_bathroom_2.jpg"].map((f) =>
+      P("bathroom2", f),
+    ),
   },
   {
     id: "bathroom-3",
@@ -388,7 +404,7 @@ const galleryRooms = [
   }
 
   const flatGallery = galleryRooms.flatMap((r) =>
-    r.images.map((src) => ({ src, label: r.label }))
+    r.images.map((src) => ({ src, label: r.label })),
   );
 
   let lbIndex = 0;
@@ -409,7 +425,8 @@ const galleryRooms = [
   };
 
   const openLightbox = (index) => {
-    lbIndex = ((index % flatGallery.length) + flatGallery.length) % flatGallery.length;
+    lbIndex =
+      ((index % flatGallery.length) + flatGallery.length) % flatGallery.length;
     lastFocus = document.activeElement;
     updateLightbox();
     lightbox.removeAttribute("hidden");
@@ -431,8 +448,7 @@ const galleryRooms = [
 
   const step = (delta) => {
     if (flatGallery.length < 2) return;
-    lbIndex =
-      (lbIndex + delta + flatGallery.length) % flatGallery.length;
+    lbIndex = (lbIndex + delta + flatGallery.length) % flatGallery.length;
     updateLightbox();
   };
 
@@ -499,8 +515,7 @@ const galleryRooms = [
       head.appendChild(sum);
       section.appendChild(head);
 
-      const useSplit =
-        room.layout === "split" && room.images.length >= 3;
+      const useSplit = room.layout === "split" && room.images.length >= 3;
 
       if (useSplit) {
         const split = document.createElement("div");
@@ -509,15 +524,15 @@ const galleryRooms = [
           room.images[0],
           room.label,
           globalIndex++,
-          "photo-tour__cell--tall"
+          "photo-tour__cell--tall",
         );
         const stack = document.createElement("div");
         stack.className = "photo-tour__stack";
         stack.appendChild(
-          createPhotoButton(room.images[1], room.label, globalIndex++)
+          createPhotoButton(room.images[1], room.label, globalIndex++),
         );
         stack.appendChild(
-          createPhotoButton(room.images[2], room.label, globalIndex++)
+          createPhotoButton(room.images[2], room.label, globalIndex++),
         );
         split.appendChild(tall);
         split.appendChild(stack);
@@ -528,7 +543,7 @@ const galleryRooms = [
           grid.className = "photo-tour__grid";
           for (let i = 3; i < room.images.length; i++) {
             grid.appendChild(
-              createPhotoButton(room.images[i], room.label, globalIndex++)
+              createPhotoButton(room.images[i], room.label, globalIndex++),
             );
           }
           section.appendChild(grid);
@@ -580,7 +595,7 @@ const galleryRooms = [
         step(1);
       }
     },
-    true
+    true,
   );
 })();
 
